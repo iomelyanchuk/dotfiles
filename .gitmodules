@@ -1,0 +1,12 @@
+[submodule "vifm/.config/vifm/colors"]
+	path = vifm/.config/vifm/colors
+	url = https://github.com/vifm/vifm-colors.git
+[submodule "vifm/.config/vifm/vifm_devicons"]
+	path = vifm/.config/vifm/vifm_devicons
+	url = https://github.com/thimc/vifm_devicons.git
+[submodule "tmux/.config/tmux/plugins/tmux-gruvbox"]
+	path = tmux/.config/tmux/plugins/tmux-gruvbox
+	url = https://git::@github.com/egel/tmux-gruvbox
+[submodule "tmux/.config/tmux/plugins/tmux-sensible"]
+	path = tmux/.config/tmux/plugins/tmux-sensible
+	url = https://git::@github.com/tmux-plugins/tmux-sensible
