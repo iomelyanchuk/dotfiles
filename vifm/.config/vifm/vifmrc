@@ -1,0 +1,228 @@
+" vim: filetype=vifm :
+" My vifm config
+
+" Main settings
+set vicmd=vim
+set syscalls
+set notrash
+set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+            \phistory,fhistory,dirstack,registers,bookmarks,bmarks
+set history=100
+set nofollowlinks
+set sortnumbers
+set undolevels=100
+set vimhelp
+set norunexec
+set slowfs=curlftpfs
+
+colorscheme gruvbox Default-256 Default
+set timefmt='%Y/%m/%d %H:%M'
+" set statusline=" %-20f%= %A %10u:%-7g %6s %18d "
+set statusline=" %t %[-> %T%] %= %A %10u:%-7g %6s %18d "
+set viewcolumns=-{name}..,6{}.
+set wildmenu
+set wildstyle=popup
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+set ignorecase
+set smartcase
+set nohlsearch
+set incsearch
+set scrolloff=4
+"set grepprg='ag --line-numbers %i %a %s'
+set grepprg='rg --hidden -n %a %i %s'
+set previewoptions+=hardgraphicsclear
+
+" Commands
+command! df df -h %m 2> /dev/null
+command! diff vim -d %f %F
+command! zip zip -r %c.zip %f
+command! run !! ./%f
+command! make !!make %a
+command! mkcd :mkdir %a | cd %a
+command! vgrep vim "+grep %a"
+command! reload :write | restart full
+
+" Filetypes/fileviewers
+filetype *.md5
+        \ {Check MD5 hash sum}
+        \ md5sum -c %f %S,
+filetype *.sha1
+        \ {Check SHA1 hash sum}
+        \ sha1sum -c %f %S,
+filetype *.sha256
+        \ {Check SHA256 hash sum}
+        \ sha256sum -c %f %S,
+filetype *.sha512
+        \ {Check SHA512 hash sum}
+        \ sha512sum -c %f %S,
+filetype {*.asc},<application/pgp-signature>
+        \ {Check signature}
+        \ !!gpg --verify %c,
+filetype *.ssh
+        \ {Mount with sshfs}
+        \ FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR %FOREGROUND,
+filetype *.ftp
+        \ {Mount with curlftpfs}
+        \ FUSE_MOUNT2|curlftpfs -o ftp_port=-,,disable_eprt %PARAM %DESTINATION_DIR %FOREGROUND,
+fileviewer *.zip,*.jar,*.war,*.ear,*.oxt tar -tf %f
+fileviewer *.tgz,*.tar.gz tar -tzf %c
+fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
+fileviewer *.tar.xz,*.txz tar -tJf %c
+fileviewer *.tar.zst,*.tzst tar -t --zstd -f %c
+fileviewer {*.tar},<application/x-tar> tar -tf %c
+fileviewer {*.rar},<application/x-rar> unrar v %c
+fileviewer {*.7z},<application/x-7z-compressed> 7z l %c
+filetype {*.iso},<application/x-iso9660-image>
+        \ {Mount with fuseiso}
+        \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
+filetype *.tar,
+    \*.tar.bz2,*.tbz2,*.tbz,*.tz2,*.tar.gz,*.tgz,*.taz,*.tar.lz,*.tlzip,*.tar.lzma,*.tlzma,*.tlz,
+    \*.tar.lzop,*.tlzo,*.tlzop,*.tar.xz,*.txz,*.tar.zst,*.tzst,*.tar.Z,*.taZ,
+    \*.bz2,*.gz,*.lz,*.lzma,*.lzop,*.xz,*.zst,*.Z,
+    \*.jar,*.war,*.ear,*.oxt,*.apkg,*.lha,*.ar,*.cpio,*.rpm,*.deb,*.udeb,*.mtree,*.xar,
+    \ {Mount with archivemount}
+    \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
+filetype *.7z,
+    \*.dsl.dz,*.tar,*.a,*.so,lib*.so.*,*.zip,*.ova,*.sfs,
+    \*.apk,*.apm,*.ar,*.arj,*.cab,*.chm,*.cpio,*.cramfs,*.deb,*.dll,*.dmg,*.doc,*.esd,*.exe,
+    \*.flv,*.hxs,*.img,*.iso,*.iso,*.jar,*.lib,*.macho,*.msi,*.msp,*.nsis,*.pkg,*.pmd,*.ppt,
+    \*.qcow,*.qcow2,*.qcow2c,*.r00,*.rar,*.raw,*.rpm,*.squashfs,*.swf,*.swm,*.sys,*.vdi,*.vhd,*.vmdk,*.wim,*.xar,*.xls,
+    \*.tar.bz2,*.tbz2,*.tbz,*.tz2,*.tar.gz,*.tgz,*.taz,*.tar.lz,*.tlzip,*.tar.lzma,*.tlzma,*.tlz,
+    \*.tar.lzop,*.tlzo,*.tlzop,*.tar.xz,*.txz,*.tar.zst,*.tzst,*.tar.Z,*.taZ,
+    \*.bz2,*.gz,*.lz,*.lzma,*.lzop,*.xz,*.zst,*.Z
+    \ {Mount with fuse3-p7zip}
+    \ FUSE_MOUNT|fuse3-p7zip %SOURCE_FILE %DESTINATION_DIR,
+filextype {*.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx,*.ppt},
+        \<application/vnd.openxmlformats-officedocument.*,
+        \application/msword,
+        \application/vnd.ms-excel>
+        \ libreoffice %f &
+fileviewer {*.doc},<application/msword> catdoc %c
+fileviewer {*.docx},
+        \<application/
+        \vnd.openxmlformats-officedocument.wordprocessingml.document>
+        \ docx2txt %f -
+
+" View with ueberzug & vifmimg-git
+" Needs to run vifm via vifmrun
+"fileviewer *.pdf
+"       \ vifmimg pdf %px %py %pw %ph %c
+"       \ %pc
+"       \ vifmimg clear
+"fileviewer *.djvu
+"       \ vifmimg djvu %px %py %pw %ph %c
+"       \ %pc
+"       \ vifmimg clear
+"fileviewer *.epub
+"       \ vifmimg epub %px %py %pw %ph %c
+"       \ %pc
+"       \ vifmimg clear
+"fileviewer <video/*>
+"       \ vifmimg video %px %py %pw %ph %c
+"       \ %pc
+"       \ vifmimg clear
+"fileviewer <image/*>
+"       \ vifmimg draw %px %py %pw %ph %c
+"       \ %pc
+"       \ vifmimg clear
+"fileviewer <audio/*>
+"       \ vifmimg audio %px %py %pw %ph %c
+"       \ %pc
+"       \ vifmimg clear
+"fileviewer <font/*>
+"       \ vifmimg font %px %py %pw %ph %c
+"       \ %pc
+"       \ vifmimg clear
+
+" Vifm-sixel https://github.com/eylles/vifm-sixel-preview
+fileviewer *.pdf
+        \ vifm-sixel pdf %pw %ph %c %pd
+        \ %pc
+        \ vifm-sixel clear
+
+fileviewer *.epub
+        \ vifm-sixel epub %pw %ph %c %pd
+        \ %pc
+        \ vifm-sixel clear
+
+fileviewer <video/*>
+        \ vifm-sixel video %pw %ph %c %pd
+        \ %pc
+        \ vifm-sixel clear
+
+fileviewer <image/*>
+        \ vifm-sixel draw %pw %ph %c %pd
+        \ %pc
+        \ vifm-sixel clear
+
+fileviewer <audio/*>
+        \ vifm-sixel audio %pw %ph %c %pd
+        \ %pc
+        \ vifm-sixel clear
+
+fileviewer <font/*>
+        \ vifm-sixel font %pw %ph %c %pd
+        \ %pc
+        \ vifm-sixel clear
+
+" Other filetypes
+filetype * xdg-open
+
+" FZF
+command! FZFlocate : set noquickview
+        \| let $FZF_PICK = term('locate $HOME | fzf --border 2>/dev/tty')
+        \| if $FZF_PICK != ''
+        \|     execute 'goto' fnameescape($FZF_PICK)
+        \| endif
+command! FZFfind : set noquickview
+        \| let $FZF_PICK = term('fd -HI . | fzf --border 2>/dev/tty')
+        \| if $FZF_PICK != ''
+        \|     execute 'goto' fnameescape($FZF_PICK)
+        \| endif
+command! FZFcd : set noquickview
+        \| let $FZF_PICK = term('fd -H -t d . | fzf --border 2>/dev/tty')
+        \| if $FZF_PICK != ''
+        \|     execute 'cd' fnameescape($FZF_PICK)
+        \| endif
+command! FZFgcd : set noquickview
+        \| let $FZF_PICK = term('fd -H -t d . / | fzf --border 2>/dev/tty')
+        \| if $FZF_PICK != ''
+        \|     execute 'cd' fnameescape($FZF_PICK)
+        \| endif
+
+nnoremap ,l :FZFlocate<cr>
+nnoremap ,f :FZFfind<cr>
+nnoremap gd :FZFcd<cr>
+nnoremap gD :FZFgcd<cr>
+
+" Mappings
+nnoremap s :shell<cr>
+nnoremap S :sort<cr>
+nnoremap w :view<cr>
+vnoremap w :view<cr>gv
+nnoremap gf :file<cr>
+nnoremap gb :file &<cr>l
+nnoremap yd :!echo -n %d | xsel --input --primary %i &&
+        \ echo -n %d | xsel --clipboard --input %i<cr>
+nnoremap yf :!echo -n %c:p | xsel --input --primary %i &&
+        \ echo -n %c:p | xsel --clipboard --input %i<cr>
+nnoremap I cw<c-a>
+nnoremap cc cw<c-u>
+nnoremap A cw
+nnoremap ,t :!konsole &<cr>
+nnoremap ,c :write | edit $MYVIFMRC | restart full<cr>
+nnoremap ,w :set wrap!<cr>
+nnoremap <f3> :!vim -R %f<cr>
+nnoremap <f4> :edit<cr>
+nnoremap <f5> :copy<cr>
+nnoremap <f6> :move<cr>
+nnoremap <f7> :mkdir<space>
+nnoremap <f8> :delete<cr>
+nnoremap <a-i> :sync<cr>
+nnoremap <a-o> :sync %c<cr>
+nnoremap <c-u> <c-w>x
+map <space> tj
+map <c-\> :bmarks<cr>
+map * ggVG<cr>
+
+source $HOME/.config/vifm/vifm_devicons/favicons.vifm

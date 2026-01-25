@@ -1,0 +1,119 @@
+! Common settings
+Xcursor.theme: breeze_cursors
+Xcursor.size: 16
+
+! URxvt tuning
+URxvt.font: xft:Hasklug Nerd Font:antialias=true:size=10
+!URxvt.font: xft:JetBrainsMono Nerd Font:antialias=true:size=10
+!URxvt.font: xft:Hack Nerd Font Mono:antialias=true:size=10
+URxvt.intensityStyles: false
+URxvt.geometry: 125x35
+URxvt.letterSpace: -1
+URxvt.iso14755: false
+
+!URxvt.perl-ext-common: tabbedex
+
+!URxvt.keysym.Control-Shift-T: perl:tabbedex:new_tab
+!URxvt.keysym.Shift-Left: perl:tabbedex:move_tab_left
+!URxvt.keysym.Shift-Right: perl:tabbedex:move_tab_right
+!URxvt.keysym.Shift-Up: perl:tabbedex:rename_tab
+!URxvt.tabbedex.title: false
+!URxvt.tabbedex.autohide: true
+!URxvt.tabbedex.reopen-on-close: yes
+!URxvt.tabbedex.no-tabbedex-keys: true
+!!!URxvt.tabbedex.tabbar-timeouts: 0:|:3:():6:[]:9:{}:12:<>
+!URxvt.tabbedex.tabbar-timeouts: 0:<>
+
+URxvt.scrollBar: true
+URxvt.scrollBar_right: true
+URxvt.scrollstyle: plain
+URxvt.scrollColor: #216a9f
+
+! special
+URxvt.foreground:   #f8f8f2
+URxvt.background:   #272822
+URxvt.cursorColor:  #f8f8f2
+! black
+URxvt.color0:       #272822
+URxvt.color8:       #75715e
+! red
+URxvt.color1:       #f92672
+URxvt.color9:       #f92672
+! green
+URxvt.color2:       #a6e22e
+URxvt.color10:      #a6e22e
+! yellow
+URxvt.color3:       #f4bf75
+URxvt.color11:      #f4bf75
+! blue
+URxvt.color4:       #66d9ef
+URxvt.color12:      #66d9ef
+! magenta
+URxvt.color5:       #ae81ff
+URxvt.color13:      #ae81ff
+! cyan
+URxvt.color6:       #a1efe4
+URxvt.color14:      #a1efe4
+! white
+URxvt.color7:       #f8f8f2
+URxvt.color15:      #f9f8f5
+
+! XTerm tuning
+XTerm.termName: xterm-256color
+XTerm*geometry: 120x35
+XTerm*foreground:   #f8f8f2
+XTerm*background:   #272822
+XTerm*cursorColor:  #f8f8f2
+XTerm*color0:       #272822
+XTerm*color8:       #75715e
+XTerm*color1:       #f92672
+XTerm*color9:       #f92672
+XTerm*color2:       #a6e22e
+XTerm*color10:      #a6e22e
+XTerm*color3:       #f4bf75
+XTerm*color11:      #f4bf75
+XTerm*color4:       #66d9ef
+XTerm*color12:      #66d9ef
+XTerm*color5:       #ae81ff
+XTerm*color13:      #ae81ff
+XTerm*color6:       #a1efe4
+XTerm*color14:      #a1efe4
+XTerm*color7:       #f8f8f2
+XTerm*color15:      #f9f8f5
+XTerm*faceName:Hasklug Nerd Font:size=10:antialias=true
+!XTerm*faceName:JetBrainsMono Nerd Font:size=10:antialias=true
+!XTerm*font: 7x13
+!sixel support
+XTerm*decTerminalID: vt340
+XTerm*numColorRegisters: 256
+XTerm*disallowedWindowOps: 1,2,3,4,5,6,7,8,9,11,13,19,20,21,GetSelection,SetSelection,SetWinLines,SetXprop
+
+! UXTerm tuning
+UXTerm.termName: xterm-256color
+UXTerm*geometry: 120x35
+UXTerm*foreground:   #f8f8f2
+UXTerm*background:   #272822
+UXTerm*cursorColor:  #f8f8f2
+UXTerm*color0:       #272822
+UXTerm*color8:       #75715e
+UXTerm*color1:       #f92672
+UXTerm*color9:       #f92672
+UXTerm*color2:       #a6e22e
+UXTerm*color10:      #a6e22e
+UXTerm*color3:       #f4bf75
+UXTerm*color11:      #f4bf75
+UXTerm*color4:       #66d9ef
+UXTerm*color12:      #66d9ef
+UXTerm*color5:       #ae81ff
+UXTerm*color13:      #ae81ff
+UXTerm*color6:       #a1efe4
+UXTerm*color14:      #a1efe4
+UXTerm*color7:       #f8f8f2
+UXTerm*color15:      #f9f8f5
+UXTerm*faceName:Hasklug Nerd Font:size=10:antialias=true
+!UXTerm*faceName:JetBrainsMono Nerd Font:size=10:antialias=true
+!UXTerm*font: 7x13
+!sixel support
+UXTerm*decTerminalID: vt340
+UXTerm*numColorRegisters: 256
+UXTerm*disallowedWindowOps: 1,2,3,4,5,6,7,8,9,11,13,19,20,21,GetSelection,SetSelection,SetWinLines,SetXprop

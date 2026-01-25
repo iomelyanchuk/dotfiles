@@ -1,0 +1,26 @@
+QTabBar
+{
+        background: #292E32;
+}
+
+QTabBar::tab
+{
+        font-size: 11px;
+        height: 18px;
+        padding-right: 6px;
+        padding-left: 6px;
+        padding-bottom: 2px;
+        padding-top: 3px;
+        border: 0px;
+        min-width: 130px;
+}
+
+QTabBar::tab:selected
+{
+        border: 0px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        /* background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 palette(window), stop: 0.85 palette(window), stop: 1 palette(highlight)); */
+        background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #292E32, stop: 0.85 #292E32, stop: 1 palette(highlight));
+        min-width: 130px;
+}

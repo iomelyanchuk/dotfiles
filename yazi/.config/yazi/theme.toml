@@ -1,0 +1,5 @@
+[flavor]
+dark = "nord"
+
+[indicator]
+preview = { underline = false, reversed = true }

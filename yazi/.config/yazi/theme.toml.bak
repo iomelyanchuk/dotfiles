@@ -1,0 +1,28 @@
+[flavor]
+dark = "gruvbox-dark"
+
+[mgr]
+preview_hovered = { underline = false, fg = "#282828", bg = "#83a598" }
+
+# Marker
+marker_selected = { fg = "#b8bb26", bg = "#b8bb26" }
+marker_copied   = { fg = "#b8bb26", bg = "#b8bb26" }
+marker_cut      = { fg = "#fb4934", bg = "#fb4934" }
+
+[status]
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+[mode]
+normal_main = { bg = "#3c3836", bold = true }
+normal_alt  = { fg = "#3c3836", bg = "#A89984" }
+
+[tasks]
+title   = {fg = "#aa5500" }
+hovered = { underline = false, fg = "#282828", bg = "#83a598" }
+
+[tabs]
+active = { fg = "#282828", bg = "#a89984" }
+inactive = { fg = "#a89984", bg = "#504945" }
+width = 1
+

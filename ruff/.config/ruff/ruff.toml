@@ -1,0 +1,8 @@
+line-length = 120
+[lint]
+# Read more here https://docs.astral.sh/ruff/rules/
+# Pyflakes - F, pycodestyle - E, W
+# flake8-builtins - A
+# Pylint - PLC, PLE, PLW
+# isort - I
+select = ['F', 'E', 'W', 'A', 'PLC', 'PLE', 'PLW', 'I']

@@ -1,0 +1,29 @@
+# Это файл конфигурации пользователя Git.
+[user]
+	name = Illia Omelianchuk
+	email = iom.mailbox@gmail.com
+[pull]
+	rebase = false
+[alias]
+	aliases = !git config -l | grep alias | cut -c 7-
+	s = status
+	co = checkout
+	cob = checkout -b
+	cm = commit -m
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	last = log -1 HEAD --stat
+	save = !git add -A && git commit -m
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+	navigate = true    # use n and N to move between diff sections
+	side-by-side = true
+	line-numbers = true
+	hunk-header-style = omit
+	syntax-theme = gruvbox-dark
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
