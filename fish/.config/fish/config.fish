@@ -7,6 +7,7 @@ if status is-interactive
     abbr -a batp 'bat -p'
     abbr -a i 'grep -i'
     abbr -a e 'grep -iv'
+    abbr -a xlsblk 'lsblk -a -o NAME,TYPE,PARTLABEL,LABEL,MOUNTPOINTS,FSTYPE,SIZE'
 
     zoxide init fish | source
     uv generate-shell-completion fish | source
