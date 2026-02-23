@@ -19,7 +19,7 @@ artwork.save_to_music_folders_relative_path cover.jpg
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version devel
-filechooser.lastdir file:///home/iom/%D0%9C%D1%83%D0%B7%D1%8B%D0%BA%D0%B0/Music@Data/Rick%20Miller%20-%20Discography
+filechooser.lastdir file:///home/iom/%D0%9C%D1%83%D0%B7%D1%8B%D0%BA%D0%B0/Music@Data/Garbage%20-%20No%20Gods%20No%20Masters%20(Limited%20Deluxe%20Edition)%20(320)/CD2
 filechooser.playlist.lastdir file:///home/iom/%D0%9C%D1%83%D0%B7%D1%8B%D0%BA%D0%B0/Music@Data/Enigma/Albums
 gtkui.color.bar_background 13631 15368 17105
 gtkui.color.listview_even_row 8995 9766 10537
@@ -162,13 +162,13 @@ playback.volume.normalized 0.4466836
 playlist.current 2
 playlist.cursor.0 1
 playlist.cursor.1 163
-playlist.cursor.2 175
+playlist.cursor.2 11
 playlist.cursor.3 -1
 playlist.cursor.4 49
 playlist.cursor.5 0
 playlist.scroll.0 0
 playlist.scroll.1 4185
-playlist.scroll.2 -175
+playlist.scroll.2 -11
 playlist.scroll.3 0
 playlist.scroll.4 1020
 playlist.scroll.5 0
@@ -177,7 +177,7 @@ playlist.stop_after_album 0
 playlist.stop_after_current 0
 playlist.tab.00000 Radio
 playlist.tab.00001 VA - House Of Blues
-playlist.tab.00002 Rick Miller - Discography
+playlist.tab.00002 CD Two
 prefwin.geometry.h 606
 prefwin.geometry.maximized 0
 prefwin.geometry.w 1102
