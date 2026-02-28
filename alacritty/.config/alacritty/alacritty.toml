@@ -4,8 +4,8 @@ import = [
 ]
 
 [font]
-normal = { family = "JetBrains Mono", style = "Regular" }
+normal = { family = "Hasklug Nerd Font Mono", style = "Regular" }
 size = 10
 
 [window]
-dimensions = { columns = 125, lines = 35 }
+dimensions = { columns = 130, lines = 40 }
