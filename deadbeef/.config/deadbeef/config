@@ -19,7 +19,7 @@ artwork.save_to_music_folders_relative_path cover.jpg
 cli_add_playlist_name Default
 close_send_to_tray 1
 deadbeef_version devel
-filechooser.lastdir file:///home/iom/%D0%9C%D1%83%D0%B7%D1%8B%D0%BA%D0%B0/Music@Data/Enigma/Albums
+filechooser.lastdir file:///home/iom/%D0%9C%D1%83%D0%B7%D1%8B%D0%BA%D0%B0/dMusic@dhost/Joe%20Bonamassa/Studio%20albums
 filechooser.playlist.lastdir file:///home/iom/%D0%9C%D1%83%D0%B7%D1%8B%D0%BA%D0%B0/Music@Data/Enigma/Albums
 gtkui.color.bar_background 13631 15368 17105
 gtkui.color.listview_even_row 8995 9766 10537
@@ -159,15 +159,15 @@ playback.loop 1
 playback.order 0
 playback.volume -10.21352
 playback.volume.normalized 0.4466836
-playlist.current 2
+playlist.current 1
 playlist.cursor.0 1
-playlist.cursor.1 163
-playlist.cursor.2 -1
-playlist.cursor.3 -1
+playlist.cursor.1 0
+playlist.cursor.2 0
+playlist.cursor.3 0
 playlist.cursor.4 49
 playlist.cursor.5 0
 playlist.scroll.0 0
-playlist.scroll.1 4185
+playlist.scroll.1 0
 playlist.scroll.2 0
 playlist.scroll.3 0
 playlist.scroll.4 1020
@@ -176,8 +176,7 @@ playlist.scroll.cursorfollowplayback 1
 playlist.stop_after_album 0
 playlist.stop_after_current 0
 playlist.tab.00000 Radio
-playlist.tab.00001 VA - House Of Blues
-playlist.tab.00002 1993 - Enigma 2 - The Cross Of Changes
+playlist.tab.00001 2014. Joe Bonamassa - Different Shades Of Blue (2014, Limited Edition, Provogue, EU, Italia, PRD74415)
 prefwin.geometry.h 606
 prefwin.geometry.maximized 0
 prefwin.geometry.w 1102
@@ -185,9 +184,9 @@ prefwin.geometry.x 0
 prefwin.geometry.y 0
 replaygain.processing_flags 0
 resume.paused 0
-resume.playlist -1
-resume.position -1.000000
-resume.track -1
+resume.playlist 1
+resume.position 0.0928798
+resume.track 5
 resume_last_session 1
 searchwin.geometry.h 150
 searchwin.geometry.w 450
