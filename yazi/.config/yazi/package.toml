@@ -1,11 +1,11 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "b9946d9"
+rev = "39aaf6d"
 hash = "7b625412411be411153886894d9acaf"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "b9946d9"
+rev = "39aaf6d"
 hash = "187cc58ba7ac3befd49c342129e6f1b6"
 
 [[plugin.deps]]
@@ -15,5 +15,5 @@ hash = "f5afc904d5106ee368c8aa2ded43bd74"
 
 [[flavor.deps]]
 use = "AdithyanA2005/nord"
-rev = "1b1bf78"
-hash = "4dbe11b947f327a0075d16f4a6b55043"
+rev = "34970be"
+hash = "6e1d257f00b540acbeb194082ce073c2"
