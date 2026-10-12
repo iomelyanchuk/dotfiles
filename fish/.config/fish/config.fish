@@ -11,6 +11,8 @@ if status is-interactive
 
     zoxide init fish | source
     uv generate-shell-completion fish | source
+    # Ctl-Alt-V for show variables
+    fzf_configure_bindings --variables=\e\cv
 
 end
 

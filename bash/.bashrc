@@ -33,7 +33,7 @@ export HISTFILESIZE=10000
 export HISTTIMEFORMAT="%d/%m/%y %T "
 export WINEARCH=win64
 export WINEPREFIX=/home/iom/.wine
-export WORKON_HOME=~/.virtualenvs
+# export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=~/projects
 export LS_COLORS=$LS_COLORS:'ow=1;34:'
 export SAL_USE_VCLPLUGIN=qt6
